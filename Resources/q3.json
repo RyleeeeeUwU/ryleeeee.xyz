@@ -1,0 +1,41 @@
+﻿{
+  "Version": "2.0",
+  "UnixTimestamp": 1768164004,
+  "ControllerType": "Quest 2",
+  "LeftSaberPivotPosition": {
+    "x": -3.85271835,
+    "y": 0.905105054,
+    "z": 0.0586831123
+  },
+  "LeftSaberRotationEuler": {
+    "x": 16.9402752,
+    "y": 46.2280922,
+    "z": 1.41813564
+  },
+  "LeftSaberZOffset": 15.0999994,
+  "LeftSaberHasReference": true,
+  "LeftSaberReference": {
+    "x": 0.167283311,
+    "y": -0.369811833,
+    "z": 0.6096632,
+    "w": -0.680857062
+  },
+  "RightSaberPivotPosition": {
+    "x": 0.0,
+    "y": 1.32928586,
+    "z": -0.8175484
+  },
+  "RightSaberRotationEuler": {
+    "x": 20.5186062,
+    "y": -35.7000427,
+    "z": -4.70352173
+  },
+  "RightSaberZOffset": 15.0999994,
+  "RightSaberHasReference": true,
+  "RightSaberReference": {
+    "x": -0.135428563,
+    "y": -0.360979944,
+    "z": 0.7167177,
+    "w": 0.5810924
+  }
+}

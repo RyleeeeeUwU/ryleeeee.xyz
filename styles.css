@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #2e1421, #250416, #150722);
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  opacity: 0;
+  animation: fadeInBody 1.2s ease forwards;
+}
+@keyframes fadeInBody {
+  to { opacity: 1; }
+}
+header {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #ff69b4, #ff1493, #8a2be2);
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: slideFadeDown 1s ease-out forwards;
+  animation-delay: 0.2s;
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 2px);
+  background-size: 40px 40px;
+  animation: floatSparkles 20s linear infinite;
+}
+@keyframes floatSparkles {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+header h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0 0 20px #ff69b4;
+}
+header p {
+  font-size: 1.25rem;
+  color: #fce4ec;
+  margin-top: 10px;
+}
+
+@keyframes slideFadeDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideFadeUp 1s ease forwards;
+}
+section:nth-of-type(2) {
+  animation-delay: 0.8s;
+}
+section:nth-of-type(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes slideFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff3c81;
+}
+.portfolio-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+.portfolio-grid .item {
+position: relative;
+width: 100%;
+padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+overflow: hidden;
+border-radius: 10px;
+background-color: #1a0d2b;
+}
+
+.portfolio-grid .item img {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+
+.portfolio-grid .item:hover img {
+  transform: scale(1.05);
+}
+.downloads ul {
+  list-style: none;
+}
+.downloads li {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a0d2b;
+  padding: 15px;
+  border-radius: 8px;
+}
+.downloads button {
+  background-color: #ff3c81;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.downloads button:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 129, 0.7);
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideFadeUp 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.navbar {
+background: linear-gradient(to right, #6e093f, #5b1c96);
+padding: 15px 30px;
+position: sticky;
+top: 0;
+z-index: 999;
+box-shadow: 0 0 10px #0000005d;
+animation: slideFadeDown 1s ease-out forwards;
+}
+
+.navbar ul {
+display: flex;
+justify-content: center;
+list-style: none;
+gap: 40px;
+}
+
+.navbar li a {
+color: #fff;
+text-decoration: none;
+font-size: 1rem;
+transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar li a:hover {
+color: #ff69b4;
+text-shadow: 0 0 10px #ff69b4;
+}
+.social-icons {
+margin-top: 15px;
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+.social-icons a img {
+width: 30px;
+height: 30px;
+filter: brightness(20) invert(1);
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+transform: scale(1.2);
+filter: brightness(100) invert(1);
+rotate: -5deg;
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+.icons {
+width: 30px;
+height: 30px;
+filter: brightness(20) invert(1);
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+.icons-simple {
+width: 30px;
+height: 30px;
+filter: grayscale(1);
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+a {
+color: #ffffff;
+}
+a:hover{
+  color: #ff69b4;
+  text-shadow: 0 0 10px #ff69b4;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}

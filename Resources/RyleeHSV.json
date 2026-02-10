@@ -1,0 +1,130 @@
+{
+  "majorVersion": 3,
+  "minorVersion": 3,
+  "patchVersion": 3,
+  "isDefaultConfig": false,
+  "displayMode": "format",
+  "doIntermediateUpdates": true,
+  "timeDependencyDecimalPrecision": 0,
+  "timeDependencyDecimalOffset": 0,
+  "judgments": [
+    {
+      "threshold": 115,
+      "text": "<size=200%>GAMER</size>%n%n%B %C %A",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fade": false
+    },
+    {
+      "threshold": 114,
+      "text": "<size=160%>ACC</size>%n%n%B %C %A",
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fade": false
+    },
+    {
+      "threshold": 110,
+      "text": "<size=150%>%c</size>%n%n%B %C %A",
+      "color": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "fade": false
+    },
+    {
+      "threshold": 108,
+      "text": "<size=150%>%c</size>%n%n%B %C %A",
+      "color": [
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fade": false
+    },
+    {
+      "threshold": 105,
+      "text": "<size=150%>%c</size>%n%n%B %C %A",
+      "color": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "fade": false
+    },
+    {
+      "threshold": 102,
+      "text": "<size=150%>%c</size>%n%n%B %C %A",
+      "color": [
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "fade": false
+    },
+    {
+      "threshold": 100,
+      "text": "<size=130%>you suck</size>%n%n%B %C %A",
+      "color": [
+        1.0,
+        0.5,
+        0.0,
+        1.0
+      ],
+      "fade": false
+    },
+    {
+      "threshold": 0,
+      "text": "<size=180%>skill issue</size>%n%n%B %C %A",
+      "color": [
+        1.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "fade": false
+    }
+  ],
+  "beforeCutAngleJudgments": [
+    {
+      "threshold": 68,
+      "text": ""
+    },
+    {
+      "threshold": 0,
+      "text": "________________"
+    }
+  ],
+  "accuracyJudgments": [
+    {
+      "threshold": 15,
+      "text": "+++++"
+    },
+    {
+      "threshold": 0,
+      "text": ""
+    }
+  ],
+  "afterCutAngleJudgments": [
+    {
+      "threshold": 30,
+      "text": ""
+    },
+    {
+      "threshold": 0,
+      "text": "-------"
+    }
+  ]
+}
