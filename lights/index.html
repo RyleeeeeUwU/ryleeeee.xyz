@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:3</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background: #1b1b1b; }
+        .card { background: rgb(68, 68, 68); padding: 20px; border-radius: 12px; shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 10px; width: 300px; text-align: center; }
+        .btn-group { display: flex; justify-content: space-around; margin-top: 15px; }
+        button { padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .btn-on { background-color: #e66bff; color: white; }
+        .btn-off { background-color: #71009e; color: white; }
+        button:active { transform: scale(0.95); }
+        .status { font-size: 0.8em; color: #666; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Home Control</h1>
+
+    <div class="card">
+        <h3>Luci scrivania</h3>
+        <div class="btn-group">
+            <button class="btn-on" onclick="control(0, 'on')">ON/OFF</button>
+        </div>
+        <p id="stat-0" class="status">Status: Ready</p>
+    </div>
+
+    <div class="card">
+        <h3>Luce letto</h3>
+        <div class="btn-group">
+            <button class="btn-on" onclick="control(1, 'on')">ON</button>
+            <button class="btn-off" onclick="control(1, 'off')">OFF</button>
+        </div>
+        <p id="stat-1" class="status">Status: Ready</p>
+    </div>
+
+    <script>
+        const config = {
+            0: { ip: '192.168.1.96', channel: 0 }, 
+            1: { ip: '192.168.1.162', channel: 0 }  
+        };
+
+        function control(id, action) {
+        const device = config[id];
+        const statusEl = document.getElementById(`stat-${id}`);
+    
+        statusEl.innerText = "Sending Command...";
+
+        const img = new Image();
+    
+        img.src = `http://${device.ip}/relay/${device.channel}?turn=${action}&cachebuster=${Date.now()}`;
+
+        img.onload = () => { statusEl.innerText = "Status: Done!"; };
+        img.onerror = () => { statusEl.innerText = "Status: Command Sent"; };
+        }
+    </script>
+</body>
+</html>
