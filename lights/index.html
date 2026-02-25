@@ -46,15 +46,22 @@
         const device = config[id];
         const statusEl = document.getElementById(`stat-${id}`);
     
-        statusEl.innerText = "Sending Command...";
+        statusEl.innerText = "Processing...";
 
-        const img = new Image();
-    
-        img.src = `http://${device.ip}/relay/${device.channel}?turn=${action}&cachebuster=${Date.now()}`;
-
-        img.onload = () => { statusEl.innerText = "Status: Done!"; };
-        img.onerror = () => { statusEl.innerText = "Status: Command Sent"; };
+        fetch(`control.php?ip=${device.ip}&ch=${device.channel}&turn=${action}`)
+        .then(response => response.json())
+        .then(data => {
+        if(data.ison !== undefined) {
+            statusEl.innerText = data.ison ? "Status: IS ON" : "Status: IS OFF";
+        } else {
+            statusEl.innerText = "Status: Success!";
         }
+        })
+        .catch(err => {
+            statusEl.innerText = "Status: Connection Error";
+            console.error("Error:", err);
+        });
+}
     </script>
 </body>
 </html>
