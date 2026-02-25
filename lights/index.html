@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <h1>Home Control</h1>
+    <h1>Rave party da remoto</h1>
 
     <div class="card">
         <h3>Luci scrivania</h3>
@@ -38,30 +38,23 @@
 
     <script>
         const config = {
-            0: { ip: '192.168.1.96', channel: 0 }, 
-            1: { ip: '192.168.1.162', channel: 0 }  
+            0: { location: 'biglight', channel: 0 }, 
+            1: { location: 'bedlight', channel: 0 }  
         };
 
         function control(id, action) {
         const device = config[id];
         const statusEl = document.getElementById(`stat-${id}`);
     
-        statusEl.innerText = "Processing...";
+        statusEl.innerText = "Sending Command...";
 
-        fetch(`control.php?ip=${device.ip}&ch=${device.channel}&turn=${action}`)
-        .then(response => response.json())
-        .then(data => {
-        if(data.ison !== undefined) {
-            statusEl.innerText = data.ison ? "Status: IS ON" : "Status: IS OFF";
-        } else {
-            statusEl.innerText = "Status: Success!";
+        const img = new Image();
+    
+        img.src = `http://ryleeeee.xyz/${device.location}`;
+
+        img.onload = () => { statusEl.innerText = "Status: Done!"; };
+        img.onerror = () => { statusEl.innerText = "Status: Command Sent"; };
         }
-        })
-        .catch(err => {
-            statusEl.innerText = "Status: Connection Error";
-            console.error("Error:", err);
-        });
-}
     </script>
 </body>
 </html>
