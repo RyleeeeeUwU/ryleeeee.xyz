@@ -127,6 +127,11 @@ transition: transform 0.3s ease;
   padding: 15px;
   border-radius: 8px;
 }
+.downloads li p {
+  font-size: 0.85rem;
+  color: #d9b8e6;
+  margin-top: 4px;
+}
 .downloads button {
   background-color: #ff3c81;
   border: none;
